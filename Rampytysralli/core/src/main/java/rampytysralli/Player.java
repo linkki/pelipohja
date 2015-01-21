@@ -7,18 +7,14 @@ import libraries.GameObject;
 
 class Player extends GameObject{
 
-    private int leftButton, rightButton;
+    private int leftButton;
+    private int rightButton;
     private boolean leftPressed = false;
     
     public Player(float x, float y, Sprite img, int leftButton, int rightButton) {
         super(x, y, img);
         this.leftButton = leftButton;
         this.rightButton = rightButton;
-    }
-
-    @Override
-    public void drawObject() {
-        batch.draw(getImage(), getX(), getY());
     }
 
     @Override

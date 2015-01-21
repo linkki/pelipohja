@@ -23,7 +23,7 @@ public abstract class GameObject implements Movable{
     
     public void draw(){
         batch.begin();
-        drawObject();
+        batch.draw(getImage(), getX(), getY());
         batch.end();
     }
     public void setX(float x){
@@ -46,8 +46,6 @@ public abstract class GameObject implements Movable{
     public Rectangle getCollisionArea(){
         return this.collisionArea;
     }
-    
-    public abstract void drawObject();
     
     @Override
     public void move(){

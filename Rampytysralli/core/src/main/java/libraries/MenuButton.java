@@ -22,13 +22,15 @@ public class MenuButton extends ClickAble {
     
     
     @Override
-    public void drawObject() {
+    public void draw() {
+        batch.begin();
         if(isHover()){
             batch.draw(this.hoverImage, getX(), getY());
         }
         else{
             batch.draw(this.defaultImage, getX(), getY());
         }
+        batch.end();
     }
     public String getButtonText(){
         return this.buttonText;
