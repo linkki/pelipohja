@@ -1,7 +1,6 @@
 
 package rampytysralli;
 
-import rampytysralli.VictoryScene;
 import com.badlogic.gdx.Game;
 import libraries.SceneManager;
 
@@ -12,8 +11,6 @@ class MyGame extends Game{
     
     static SceneManager sceneManager;
     
-    
-
     @Override
     public void create() {        
         sceneManager = new SceneManager();
@@ -21,13 +18,6 @@ class MyGame extends Game{
         menu.initialize();
         sceneManager.addScene(menu);
         
-        RallyScene rallyGame = new RallyScene();
-        sceneManager.addScene(rallyGame);
-        rallyGame.initialize();
-        
-        VictoryScene victory = new VictoryScene();
-        sceneManager.addScene(victory);
-        victory.initialize();
     }
 
     @Override
