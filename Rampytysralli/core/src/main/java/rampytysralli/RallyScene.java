@@ -1,11 +1,15 @@
-package mygame.implementation;
+package rampytysralli;
 
+import rampytysralli.MyGame;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import java.util.ArrayList;
+import libraries.GameObject;
+import libraries.Scene;
+import libraries.StaticImage;
 
-public class RallyScene extends Scene {
+class RallyScene extends Scene {
 
     private ArrayList<GameObject> objects;
 

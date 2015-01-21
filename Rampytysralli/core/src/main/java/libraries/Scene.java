@@ -1,4 +1,4 @@
-package mygame.implementation;
+package libraries;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;

@@ -1,9 +1,9 @@
 
-package mygame.implementation;
+package libraries;
 
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Sprite;
-import mygame.implementation.MyGame;
 
 
 public abstract class ClickAble extends GameObject{
@@ -15,7 +15,7 @@ public abstract class ClickAble extends GameObject{
     }
     
     public boolean isMousePointerTouching(float mouseX, float mouseY){
-        return getCollisionArea().contains(mouseX, Math.abs(mouseY - MyGame.SCREEN_HEIGHT));
+        return getCollisionArea().contains(mouseX, Math.abs(mouseY - Gdx.app.getGraphics().getHeight()));
     }
 
     public boolean isHover() {

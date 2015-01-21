@@ -1,4 +1,4 @@
-package mygame.implementation;
+package libraries;
 
 import com.badlogic.gdx.Input.Buttons;
 import com.badlogic.gdx.InputProcessor;

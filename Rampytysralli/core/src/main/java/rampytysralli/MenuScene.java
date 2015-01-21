@@ -1,11 +1,16 @@
-package mygame.implementation;
+package rampytysralli;
 
+import rampytysralli.MyGame;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import java.util.ArrayList;
+import libraries.InputListener;
+import libraries.MenuButton;
+import libraries.Scene;
+import libraries.StaticImage;
 
-public class MenuScene extends Scene {
+class MenuScene extends Scene {
 
     private ArrayList<MenuButton> buttonList;
 

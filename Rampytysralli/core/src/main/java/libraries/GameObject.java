@@ -1,5 +1,5 @@
 
-package mygame.implementation;
+package libraries;
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -10,7 +10,7 @@ public abstract class GameObject implements Movable{
     private float x, y;
     private Sprite img;
     private Rectangle collisionArea;
-    SpriteBatch batch = new SpriteBatch();
+    protected SpriteBatch batch = new SpriteBatch();
     
     
     public GameObject(float x, float y, Sprite img) {

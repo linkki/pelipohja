@@ -1,5 +1,5 @@
 
-package mygame.implementation;
+package libraries;
 
 public interface Movable {    
     public void move();

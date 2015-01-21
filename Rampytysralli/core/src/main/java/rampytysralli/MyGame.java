@@ -1,9 +1,11 @@
 
-package mygame.implementation;
+package rampytysralli;
 
+import rampytysralli.VictoryScene;
 import com.badlogic.gdx.Game;
+import libraries.SceneManager;
 
-public class MyGame extends Game{
+class MyGame extends Game{
 
     static final int SCREEN_WIDTH = 1200;    
     static final int SCREEN_HEIGHT = 900;

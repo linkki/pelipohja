@@ -1,10 +1,11 @@
 
-package mygame.implementation;
+package rampytysralli;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import libraries.GameObject;
 
-public class Player extends GameObject{
+class Player extends GameObject{
 
     private int leftButton, rightButton;
     private boolean leftPressed = false;
