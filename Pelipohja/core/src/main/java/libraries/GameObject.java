@@ -9,7 +9,6 @@ public abstract class GameObject implements Movable{
     
     private float x, y;
     private Sprite img;
-    private Rectangle collisionArea;
     protected SpriteBatch batch = new SpriteBatch();
     
     
@@ -17,7 +16,6 @@ public abstract class GameObject implements Movable{
         this.x = x;
         this.y = y;
         this.img = img;
-        this.collisionArea = new Rectangle(x, y, img.getWidth(), img.getHeight());
     }
 
     
@@ -44,7 +42,7 @@ public abstract class GameObject implements Movable{
     }
 
     public Rectangle getCollisionArea(){
-        return this.collisionArea;
+        return new Rectangle(x, y, img.getWidth(), img.getHeight());
     }
     
     @Override
