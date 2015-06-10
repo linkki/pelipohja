@@ -8,9 +8,13 @@ import java.util.ArrayList;
 public abstract class Scene implements Screen {
 
     private ArrayList<GameObject> allDrawables;
+    private ArrayList<GameObject> toBeAdded;
+    private ArrayList<GameObject> toBeRemoved;
 
     public Scene() {
         allDrawables = new ArrayList<GameObject>();
+        toBeAdded = new ArrayList<GameObject>();
+        toBeRemoved = new ArrayList<GameObject>();
     }
 
     public abstract void initialize();
@@ -20,16 +24,20 @@ public abstract class Scene implements Screen {
     public abstract void checkInputs();
 
     public void addDrawable(GameObject image) {
-        allDrawables.add(image);
+        toBeAdded.add(image);
+    }
+
+    public void removeDrawable(GameObject image) {
+        toBeRemoved.add(image);
     }
 
     //REFACTOR THIS AWAY TO THE ONE BELOW THIS METHOD
     public void addButtons(ArrayList<MenuButton> buttons) {
-        allDrawables.addAll(buttons);
+        toBeAdded.addAll(buttons);
     }
-    
+
     public void addDrawables(ArrayList<GameObject> players) {
-        allDrawables.addAll(players);
+        toBeAdded.addAll(players);
     }
 
     @Override
@@ -37,6 +45,10 @@ public abstract class Scene implements Screen {
         checkInputs();
         updateScene();
         flush();
+        allDrawables.addAll(toBeAdded);
+        toBeAdded.clear();
+        allDrawables.removeAll(toBeRemoved);
+        toBeRemoved.clear();
         for (GameObject drawable : allDrawables) {
             drawable.draw();
         }
