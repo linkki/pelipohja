@@ -13,7 +13,7 @@ public class Teksti extends PeliOtus {
     private BitmapFont fontti;
 
     public Teksti(String teksti, float x, float y) {
-        super(x, y, null);
+        super(x, y, "assets/box.png");
         this.skaala = 1;
         this.teksti = teksti;
         this.vari = Color.BLACK;

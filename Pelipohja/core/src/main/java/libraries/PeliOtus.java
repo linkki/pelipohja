@@ -1,6 +1,7 @@
 package libraries;
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 
@@ -15,6 +16,11 @@ public abstract class PeliOtus implements Liikkuva {
         this.x = x;
         this.y = y;
         this.kuva = kuva;
+    }
+    public PeliOtus(float x, float y, String kuvanOsoite) {
+        this.x = x;
+        this.y = y;
+        this.kuva = new Sprite(new Texture(kuvanOsoite));
     }
 
     public void piirra() {
