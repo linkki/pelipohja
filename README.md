@@ -1,5 +1,7 @@
 # Pelikehys libGDX-pelien luomiseen
 
+Tämä on kesän 2015 leireillä käytetty versio suomennettuna.
+
 ## Ohjeita pelien tekemiseen pohjan avulla:
 
 [Keräilypeli](https://docs.google.com/document/d/1pSDjpLHEwYnOVPKrQ0B2yd5dvLmnkxhYuZel7XyIqRA/pub)  
