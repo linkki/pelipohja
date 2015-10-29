@@ -3,26 +3,26 @@ package libraries;
 import com.badlogic.gdx.Input.Buttons;
 import com.badlogic.gdx.InputProcessor;
 
-public class InputListener implements InputProcessor {
+public class Kuuntelija implements InputProcessor {
 
-    private boolean isButtonPressed = false;
-    private float mouseX;
-    private float mouseY;
+    private boolean nappiPainettu = false;
+    private float hiiriX;
+    private float hiiriY;
 
-    public boolean isLeftMouseButtonClicked() {
-        if (isButtonPressed) {
-            isButtonPressed = false;
+    public boolean vasenNappiPainettu() {
+        if (nappiPainettu) {
+            nappiPainettu = false;
             return true;
         }
         return false;
     }
 
-    public float getMouseX() {
-        return mouseX;
+    public float getHiiriX() {
+        return hiiriX;
     }
 
-    public float getMouseY() {
-        return mouseY;
+    public float getHiiriY() {
+        return hiiriY;
     }
     @Override
     public boolean keyDown(int i) {
@@ -47,7 +47,7 @@ public class InputListener implements InputProcessor {
     @Override
     public boolean touchUp(int mouseX, int mouseY, int pointer, int button) {
         if (button == Buttons.LEFT) {
-            isButtonPressed = true;
+            nappiPainettu = true;
         }
         return false;
     }
@@ -59,8 +59,8 @@ public class InputListener implements InputProcessor {
 
     @Override
     public boolean mouseMoved(int mouseX, int mouseY) {
-        this.mouseX = mouseX;
-        this.mouseY = mouseY;
+        this.hiiriX = mouseX;
+        this.hiiriY = mouseY;
         return false;
     }
 

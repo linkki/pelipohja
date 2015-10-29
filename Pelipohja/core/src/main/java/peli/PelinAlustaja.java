@@ -1,11 +1,11 @@
 package peli;
 
-import peli.MyGame;
+import peli.MunPeli;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import com.badlogic.gdx.graphics.Texture;
 
-public class GameInitializer 
+public class PelinAlustaja 
 {
     
     
@@ -14,9 +14,9 @@ public class GameInitializer
         LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
         config.useGL20 = false;
         config.fullscreen = false;
-        config.width = MyGame.SCREEN_WIDTH;
-        config.height = MyGame.SCREEN_HEIGHT;
+        config.width = MunPeli.SCREEN_WIDTH;
+        config.height = MunPeli.SCREEN_HEIGHT;
         Texture.setEnforcePotImages(false);
-        new LwjglApplication(new MyGame(), config);
+        new LwjglApplication(new MunPeli(), config);
     }
 }
