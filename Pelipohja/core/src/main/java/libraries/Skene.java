@@ -3,6 +3,8 @@ package libraries;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL10;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import java.util.ArrayList;
 
 public abstract class Skene implements Screen {
@@ -10,30 +12,47 @@ public abstract class Skene implements Screen {
     private ArrayList<PeliOtus> kaikkiOtukset;
     private ArrayList<PeliOtus> lisattavat;
     private ArrayList<PeliOtus> poistettavat;
+    private ArrayList<Nappi> napit;
+
+    private Kuva tausta;
+    private Kuva otsikko;
 
     public Skene() {
         kaikkiOtukset = new ArrayList<PeliOtus>();
         lisattavat = new ArrayList<PeliOtus>();
         poistettavat = new ArrayList<PeliOtus>();
+        napit = new ArrayList<Nappi>();
     }
 
     public abstract void alusta();
+    
+    public void asetaKuva(String tehtava, int x, int y, String kuva) {
+        if (tehtava.equals("tausta")) {
+            tausta = new Kuva(x, y, new Sprite(new Texture(kuva)));
+            lisaaOtus(tausta);
+        } else if (tehtava.equals("otsikko")) {
+            otsikko = new Kuva(x, y, new Sprite(new Texture(kuva)));
+            lisaaOtus(otsikko);
+        }
+    }
 
     public abstract void paivita();
 
     public abstract void tarkistaSyote();
 
-    public void lisaaOtus(PeliOtus kuva) {
-        lisattavat.add(kuva);
+    public void lisaaOtus(PeliOtus otus) {
+        lisattavat.add(otus);
     }
 
     public void poistaOtus(PeliOtus kuva) {
         poistettavat.add(kuva);
     }
-
-    //REFACTOR THIS AWAY TO THE ONE BELOW THIS METHOD
-    public void lisaaNapit(ArrayList<MenuNappi> napit) {
-        lisattavat.addAll(napit);
+    public void lisaaNappi(Nappi nappi) {
+        lisattavat.add(nappi);
+        napit.add(nappi);
+    }
+    public ArrayList<Nappi> getNapit() {
+        return napit;
     }
 
     public void lisaaOtukset(ArrayList<PeliOtus> otukset) {

@@ -2,23 +2,24 @@ package libraries;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 
-public class MenuNappi extends Klikattava {
+public class Nappi extends Klikattava {
 
-    private String napinTeksti;
+    private String napinNimi;
     private final BitmapFont fontti = new BitmapFont();
     private Sprite perusKuva;
     private Sprite leijuKuva;
     private int nappain;
     private boolean painettuJo;
 
-    public MenuNappi(float x, float y, Sprite perusKuva, Sprite leijuKuva, String napinTeksti) {
-        super(x, y, perusKuva);
-        this.perusKuva = perusKuva;
-        this.leijuKuva = leijuKuva;
-        this.napinTeksti = napinTeksti;
+    public Nappi(float x, float y, String perusKuva, String leijuKuva, String napinNimi) {
+        super(x, y, new Sprite(new Texture(perusKuva)));
+        this.perusKuva = super.getKuva();
+        this.leijuKuva = new Sprite(new Texture(leijuKuva));
+        this.napinNimi = napinNimi;
         fontti.setScale(1.5f);
     }
     
@@ -35,8 +36,8 @@ public class MenuNappi extends Klikattava {
         }
         kuvajoukko.end();
     }
-    public String getNapinTeksti(){
-        return this.napinTeksti;
+    public String getNapinNimi(){
+        return this.napinNimi;
     }
     
     public void sidoNappain(int nappain) {
