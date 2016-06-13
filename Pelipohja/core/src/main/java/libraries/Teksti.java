@@ -7,18 +7,16 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public class Teksti extends PeliOtus {
 
     private String teksti;
-    private float skaala;
-    private Color vari;
     private SpriteBatch kuvajoukko;
     private BitmapFont fontti;
 
     public Teksti(String teksti, float x, float y) {
         super(x, y, "assets/box.png");
-        this.skaala = 1;
         this.teksti = teksti;
-        this.vari = Color.BLACK;
         this.kuvajoukko = new SpriteBatch();
         this.fontti = new BitmapFont();
+        this.fontti.setColor(Color.RED);
+        this.fontti.setScale(1);
     }
 
     public String getTeksti() {
@@ -30,19 +28,19 @@ public class Teksti extends PeliOtus {
     }
 
     public float getSkaala() {
-        return this.skaala;
+        return fontti.getScaleX();
     }
 
     public void setSkaala(float skaala) {
-        this.skaala = skaala;
+        fontti.setScale(skaala);
     }
 
     public void setVari(Color vari) {
-        this.vari = vari;
+        fontti.setColor(vari);
     }
 
     public Color getVari() {
-        return this.vari;
+        return fontti.getColor();
     }
 
     @Override
