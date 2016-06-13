@@ -16,6 +16,8 @@ class Peli extends Game{
     @Override
     public void create() {        
         skenelista = new Skenelista();
+        
+        // Tässä luodaan pelissä käytetyt Skenet
         ValikkoSkene menu = new ValikkoSkene();
         menu.alusta();
         skenelista.lisaaSkene(menu);
