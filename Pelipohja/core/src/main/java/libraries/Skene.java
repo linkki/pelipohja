@@ -47,6 +47,11 @@ public abstract class Skene implements Screen {
     public void poistaOtus(PeliOtus kuva) {
         poistettavat.add(kuva);
     }
+    
+    public ArrayList<PeliOtus> getOtukset() {
+        return kaikkiOtukset;
+    }
+    
     public void lisaaNappi(Nappi nappi) {
         lisattavat.add(nappi);
         napit.add(nappi);
