@@ -12,15 +12,16 @@ public abstract class PeliOtus implements Liikkuva {
     private Sprite kuva;
     protected SpriteBatch kuvajoukko = new SpriteBatch();
 
-    public PeliOtus(float x, float y, Sprite kuva) {
-        this.x = x;
-        this.y = y;
-        this.kuva = kuva;
-    }
     public PeliOtus(float x, float y, String kuvanOsoite) {
         this.x = x;
         this.y = y;
         this.kuva = new Sprite(new Texture(kuvanOsoite));
+    }
+    
+    public PeliOtus(float x, float y, Sprite kuva) {
+        this.x = x;
+        this.y = y;
+        this.kuva = kuva;
     }
 
     public void piirra() {
