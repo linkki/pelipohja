@@ -77,17 +77,14 @@ public abstract class PeliOtus implements Liikkuva {
     }
 
     public void liikuKohti(PeliOtus kohde, float matka) {
-        float minMatka = this.kuva.getWidth() + 10;
+        //haetaan etäisyys kohteeseen x- ja y-suunnassa
         float matkaNytX = kohde.x - this.x;
         float matkaNytY = kohde.y - this.y;
-        this.kulma = (float) Math.atan(matkaNytX / matkaNytY);
-        float matkaNyt = (float) Math.sqrt(matkaNytX * matkaNytX + matkaNytY * matkaNytY);
-        if (matka >= matkaNyt - minMatka) {
-            return;
-        }
-        //distance = Math.min(distance, curDist - minDist);
-        this.x += matkaNytX * matka / matkaNyt;
-        this.y += matkaNytY * matka / matkaNyt;
+        // lasketaan miten pitkä matka pitää liikkua käyttäen Pythagoraan kaavaa
+        float kerroin = (float) (matka/(Math.sqrt( matkaNytX*matkaNytX + matkaNytY*matkaNytY )));
+        // siirretään hahmoa matkakerrointa hyväksi käyttäen x- ja y-etäisyyden ilmoittamiin suuntiin
+        this.x = this.x + kerroin * matkaNytX;
+        this.y = this.y + kerroin * matkaNytY;
     }
 
     @Override
