@@ -41,13 +41,16 @@ public class Kuuntelija implements InputProcessor {
 
     @Override
     public boolean touchDown(int mouseX, int mouseY, int pointer, int button) {
+        if (button == Buttons.LEFT) {
+            nappiPainettu = true;
+        }
         return false;
     }
 
     @Override
     public boolean touchUp(int mouseX, int mouseY, int pointer, int button) {
         if (button == Buttons.LEFT) {
-            nappiPainettu = true;
+            nappiPainettu = false;
         }
         return false;
     }
