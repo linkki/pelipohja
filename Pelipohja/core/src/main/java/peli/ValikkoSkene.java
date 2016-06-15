@@ -26,8 +26,7 @@ class ValikkoSkene extends Skene {
         
         // tässä luodaan kuuntelija, joka seuraa hiiren liikkeitä ja painalluksia
         // tähän ei tarvitse koskea!
-        kuuntelija = new Kuuntelija();
-        Gdx.input.setInputProcessor(kuuntelija);
+        kuuntelija = Peli.kuuntelija;
     }
 
     @Override
