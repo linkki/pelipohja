@@ -10,11 +10,7 @@ public class Kuuntelija implements InputProcessor {
     private float hiiriY;
 
     public boolean vasenNappiPainettu() {
-        if (nappiPainettu) {
-            nappiPainettu = false;
-            return true;
-        }
-        return false;
+        return nappiPainettu;
     }
 
     public float getHiiriX() {
