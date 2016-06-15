@@ -1,10 +1,5 @@
 package peli;
 
-import peli.Peli;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Sprite;
-import java.util.ArrayList;
 import libraries.Kuuntelija;
 import libraries.Nappi;
 import libraries.Skene;
